@@ -1,0 +1,245 @@
+:root {
+    color-scheme: dark;
+    --primary-color: #3b82f6;
+    --text-color: #000000;
+    --bg-color: #ffffff;
+    --container-width: 100%;
+    --font-family: "Inter", system-ui, -apple-system, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    font-family: var(--font-family);
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    line-height: 1.5;
+    min-height: 100dvh;
+    -webkit-font-smoothing: antialiased;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    text-wrap: balance;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.2s;
+}
+
+a:hover {
+    opacity: 0.8;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+    color: inherit;
+    background: none;
+    border: none;
+}
+
+button,
+[role="button"] {
+    cursor: pointer;
+}
+
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+@media screen and (min-width: 576px) {
+    .container {
+        max-width: 540px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .container {
+        max-width: 720px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .container {
+        max-width: 960px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    .container {
+        max-width: 1320px;
+    }
+}
+
+/* ******************************** */
+nav {
+    background-color: #3b82f6;
+}
+
+.main-nav {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    justify-content: space-between;
+    font-size: 20px;
+    padding: 20px 1rem;
+    .menu {
+        display: none;
+        gap: 40px;
+        justify-content: flex-end;
+    }
+}
+
+.hero {
+    padding: 40px 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    .image {
+        margin-top: 40px;
+    }
+}
+/* 
+@media screen and (min-width: 768px) {
+    .main-nav .menu {
+        display: flex;
+    }
+    .hero {
+        grid-template-columns: 1fr 1fr;
+        .image {
+            margin-top: 0;
+        }
+    }
+} */
+
+/* **************************************** */
+
+.cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        " box1 "
+        " box2 "
+        " box3 "
+        " box4 "
+        " box5 "
+        " box6 ";
+    gap: 20px;
+    .card {
+        box-shadow: 0 0 5px gray;
+        padding: 6px;
+    }
+    .card1 {
+        grid-area: box1;
+    }
+    .card2 {
+        grid-area: box2;
+    }
+    .card3 {
+        grid-area: box3;
+    }
+    .card4 {
+        grid-area: box4;
+    }
+    .card5 {
+        grid-area: box5;
+    }
+    .card6 {
+        grid-area: box6;
+    }
+}
+/* 
+@media screen and (min-width: 768px) {
+    .cards {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            " box1 box2 "
+            " box3 box3 "
+            " box4 box5 "
+            " box6 box6 ";
+        .card-big{
+            grid-column: span 2;
+        }  
+        .card:nth-child(3),
+        .card:nth-child(6){
+            grid-column: span 2;
+        } 
+    }
+} */
+
+/* @media screen and (min-width: 1200px) {
+    .cards {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas:
+            " box1 box2 box3 "
+            " box4 box5 box6 ";
+        .card:nth-child(3),
+        .card:nth-child(6){
+            grid-column: span 1;
+        } 
+    }
+} */
